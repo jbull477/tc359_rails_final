@@ -1,5 +1,4 @@
 class StaticController < ApplicationController
-	helper StaticHelper
   def home
   end
 
