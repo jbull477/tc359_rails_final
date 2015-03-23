@@ -1,0 +1,33 @@
+<%= form_for(@apple) do |f| %>
+  <% if @apple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apple.errors.count, "error") %> prohibited this apple from being saved:</h2>
+
+      <ul>
+      <% @apple.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :diameter %> (cm)<br>
+    <%= f.text_field :diameter %>
+  </div>
+  <div class="field">
+    <%= f.label :height %> (cm)<br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :is_red %><br>
+    <%= f.check_box :is_red %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

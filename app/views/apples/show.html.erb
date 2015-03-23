@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @apple.name %>
+</p>
+
+<p>
+  <strong>Diameter:</strong>
+  <%= @apple.diameter %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @apple.height %>
+</p>
+
+<p>
+  <strong>Is red:</strong>
+  <%= @apple.is_red %>
+</p>
+
+<%= link_to 'Edit', edit_apple_path(@apple) %> |
+<%= link_to 'Back', apples_path %>
