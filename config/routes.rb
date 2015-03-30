@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :apples
 
   resources :recyclers
@@ -6,6 +9,8 @@ Rails.application.routes.draw do
   root 'static#home'
   get '/about' => 'static#about'
   get '/cat-pictures(/:number_of_cats)' => 'static#cats', as: :cat_pictures
+  get '/sign-in' => 'sessions#new'
+  delete '/sign-out' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

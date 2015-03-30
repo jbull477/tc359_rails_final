@@ -1,4 +1,5 @@
 class ApplesController < ApplicationController
+  before_action :only_allow_signed_in_users, except: [:index, :show]
   before_action :set_apple, only: [:show, :edit, :update, :destroy]
 
   # GET /apples

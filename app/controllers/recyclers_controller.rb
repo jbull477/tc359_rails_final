@@ -1,5 +1,7 @@
 class RecyclersController < ApplicationController
+  
   before_action :set_recycler, only: [:show, :edit, :update, :destroy]
+before_action :only_allow_signed_in_users, except: [:index, :show]
 
   # GET /recyclers
   # GET /recyclers.json

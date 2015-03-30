@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323194151) do
+ActiveRecord::Schema.define(version: 20150330185256) do
 
   create_table "apples", force: :cascade do |t|
     t.text     "name"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20150323194151) do
     t.boolean  "accepts_color_separated_glass"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

@@ -20,5 +20,8 @@
   <%= @apple.is_red %>
 </p>
 
-<%= link_to 'Edit', edit_apple_path(@apple) %> |
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_apple_path(@apple) %> |
+<% end %>
+
 <%= link_to 'Back', apples_path %>

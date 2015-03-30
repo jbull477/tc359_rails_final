@@ -21,8 +21,10 @@
         <td><%= apple.height %></td>
         <td><%= apple.is_red %></td>
         <td><%= link_to 'Show', apple %></td>
-        <td><%= link_to 'Edit', edit_apple_path(apple) %></td>
-        <td><%= link_to 'Destroy', apple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_apple_path(apple) %></td>
+          <td><%= link_to 'Destroy', apple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Apple', new_apple_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Apple', new_apple_path %>
+<% end %>

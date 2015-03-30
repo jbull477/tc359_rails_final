@@ -40,5 +40,7 @@
   <%= @recycler.accepts_color_separated_glass %>
 </p>
 
-<%= link_to 'Edit', edit_recycler_path(@recycler) %> |
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_recycler_path(@recycler) %> |
+<% end %>
 <%= link_to 'Back', recyclers_path %>

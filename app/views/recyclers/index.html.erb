@@ -29,8 +29,10 @@
         <td><%= recycler.accepts_corrugated_cardboard %></td>
         <td><%= recycler.accepts_color_separated_glass %></td>
         <td><%= link_to 'Show', recycler %></td>
-        <td><%= link_to 'Edit', edit_recycler_path(recycler) %></td>
-        <td><%= link_to 'Destroy', recycler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_recycler_path(recycler) %></td>
+          <td><%= link_to 'Destroy', recycler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +40,6 @@
 
 <br>
 
-<%= link_to 'New Recycler', new_recycler_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Recycler', new_recycler_path %>
+<% end %>
