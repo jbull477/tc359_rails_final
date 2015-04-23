@@ -54,6 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Web Server!
 group :production do
-  gem 'unicorn'
-  gem 'rack-timeout'
+  gem 'puma'
 end
