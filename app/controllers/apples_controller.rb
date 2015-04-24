@@ -5,7 +5,11 @@ class ApplesController < ApplicationController
   # GET /apples
   # GET /apples.json
   def index
-    @apples = Apple.all
+    if(params.has_key?(:search))
+      @apples = Apple.search(params[:search])
+    else
+      @apples = Apple.all
+    end
   end
 
   # GET /apples/1
