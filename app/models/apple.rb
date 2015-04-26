@@ -5,10 +5,7 @@ class Apple < ActiveRecord::Base
   validates :height, :numericality => {:greater_than => 0.0}
 
   def self.search(search)
-    if search
-      self.where("name like ?", "%#{search}%")
-    else
-      self.all
-    end
+    return all if search.blank?
+    where('LOWER(name) LIKE LOWER(?)', "%#{search}%")
   end
 end
